@@ -1,7 +1,7 @@
 import numpy as numpy
 
 
-def IPF(row_totals, col_totals):
+def IPF(row_totals, col_totals, random_fill=False):
 	"""
 	Take two inputs: row and column totals.
 	The inputs must be NumPy Arrays whose sums are equal.
@@ -11,9 +11,13 @@ def IPF(row_totals, col_totals):
 	assert type(row_totals) == np.ndarray
 	assert type(col_totals) == np.ndarray
 	assert sum(row_totals) == sum(col_totals)
+	assert random_fill in (True, False)
 
-	# Initialize the matrix with 1s
-	matrix = np.ones((len(row_totals), len(col_totals)))
+	# Initialize the matrix
+	if random_fill == False:
+		matrix = np.ones((len(row_totals), len(col_totals)))
+	else:
+		matrix = np.random.rand(len(row_totals),len(col_totals))
 
 	# Row update
 	row_scalars = matrix.sum(axis=1) / row_totals
