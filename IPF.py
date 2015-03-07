@@ -1,8 +1,6 @@
 import numpy as numpy
 
 
-
-
 def IPF(row_totals, col_totals):
 	"""
 	Take two inputs: row and column totals.
