@@ -16,11 +16,11 @@ def IPF(row_totals, col_totals):
 	matrix = np.ones((len(row_totals), len(col_totals)))
 
 	# Row update
-	row_scalars = matrix.sum(axis=1) / row_vals
+	row_scalars = matrix.sum(axis=1) / row_totals
 	matrix = (matrix.T / row_scalars).T
 
 	# Column update
-	col_scalars = matrix.sum(axis=0) / col_vals
+	col_scalars = matrix.sum(axis=0) / col_totals
 	matrix = (matrix / col_scalars)
 
 	# Return
