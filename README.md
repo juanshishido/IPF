@@ -5,7 +5,7 @@ Iterative Proportional Fitting in Python
 IPF fills in a matrix given row and column totals whose respective sums are equal.
 
 ## How It Works
-The algorithm fills the matrix with either all 1s or random numbers to start. These are the seed values. Then, each row in the matrix is scaled so that it sums to its respective row total. The same update is done to each column. This is repeated until additional updates have little effect, as defined by the user, on the values.
+The algorithm fills the matrix with either user supplied values, all 1s, or random numbers to start. These are the seed values. Then, each row in the matrix is scaled so that it sums to its respective row total. The same update is done to each column. This is repeated until additional updates have little effect, as defined by the user, on the values.
 
 It's important to note that the results don't necessarily yield true values and that they depend on the seed values.
 
